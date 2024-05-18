@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="571.0" prefWidth="1291.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetb2b.AllProductListController">
+   <children>
+      <AnchorPane fx:id="PaneListeProduit2" layoutX="222.0" prefHeight="540.0" prefWidth="733.0" style="-fx-background-color: blue;" visible="false">
+         <children>
+            <ScrollPane prefHeight="565.0" prefWidth="742.0">
+               <content>
+                  <GridPane fx:id="ProductListGrid" prefHeight="562.0" prefWidth="750.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="PaneListeProduit3" layoutX="964.0" layoutY="1.0" prefHeight="567.0" prefWidth="327.0">
+         <children>
+            <TableView fx:id="tablePanier" layoutX="8.0" layoutY="14.0" prefHeight="318.0" prefWidth="310.0" style="-fx-background-radius: 5px; -fx-background-color: transparent;">
+              <columns>
+                <TableColumn prefWidth="104.00006103515625" style="-fx-background-color: #327794; -fx-text-background-color: #fff;" text="Libelle Produit" />
+                <TableColumn prefWidth="83.199951171875" style="-fx-background-color: #327794; -fx-text-background-color: #fff;" text="Prix" />
+                  <TableColumn prefWidth="121.60009765625" style="-fx-background-color: #327794; -fx-text-background-color: #fff;" text="Quantité" />
+              </columns>
+            </TableView>
+            <Button layoutX="8.0" layoutY="445.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="310.0" style="-fx-background-color: #327794;" text="Confirmer Commande" textFill="WHITE" />
+            <Button layoutX="14.0" layoutY="531.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="113.0" style="-fx-background-color: #327794;" text="Clear" textFill="WHITE" />
+            <Button layoutX="207.0" layoutY="531.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="98.0" style="-fx-background-color: #327794;" text="Supprimer" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="PanemodifProfil" layoutX="222.0" layoutY="-3.0" prefHeight="571.0" prefWidth="1070.0" visible="false">
+         <children>
+            <Label layoutX="335.0" layoutY="21.0" prefHeight="18.0" prefWidth="363.0" text="Modification de Profil utilisateur " textFill="#07425c">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <TextField fx:id="NomField" layoutX="56.0" layoutY="117.0" prefHeight="26.0" prefWidth="232.0" promptText="Nom Entreprise" />
+            <TextField fx:id="NumFiscEntrpField" disable="true" layoutX="303.0" layoutY="118.0" prefHeight="26.0" prefWidth="232.0" promptText="Code Entreprise" />
+            <TextField fx:id="EmailField" layoutX="56.0" layoutY="171.0" prefHeight="26.0" prefWidth="480.0" promptText="Email" />
+            <TextField fx:id="PaysField" layoutX="56.0" layoutY="230.0" prefHeight="26.0" prefWidth="232.0" promptText="Pays" />
+            <TextField fx:id="AdresseField" layoutX="303.0" layoutY="231.0" prefHeight="26.0" prefWidth="232.0" promptText="Adresse" />
+            <TextField fx:id="oldPassField" layoutX="56.0" layoutY="349.0" prefHeight="26.0" prefWidth="480.0" promptText="Ancien Mot de passe" />
+            <TextField fx:id="NewPassField" layoutX="56.0" layoutY="401.0" prefHeight="26.0" prefWidth="480.0" promptText="Nouveau Mot de passe" />
+            <TextField fx:id="ConfNewPassField" layoutX="56.0" layoutY="452.0" prefHeight="26.0" prefWidth="480.0" promptText="Confirmation Mot de passe" />
+            <Button fx:id="ConfModifPassBtn" layoutX="56.0" layoutY="506.0" mnemonicParsing="false" onAction="#ModifPassword" prefHeight="26.0" prefWidth="189.0" style="-fx-background-color: #327794;" text="Modifier Mot de passe" textFill="WHITE" />
+            <Separator layoutX="56.0" layoutY="289.0" prefHeight="0.0" prefWidth="480.0" />
+            <Label layoutX="72.0" layoutY="307.0" prefHeight="26.0" prefWidth="190.0" text="Modifier Mot De passe">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="SupprimBtn" layoutX="638.0" layoutY="402.0" mnemonicParsing="false" onAction="#SupprimerCompte" prefHeight="26.0" prefWidth="190.0" style="-fx-background-color: #a63038;" text="Supprimer Compte" textFill="WHITE" />
+            <Button fx:id="ConfModifBtn" layoutX="638.0" layoutY="184.0" mnemonicParsing="false" onAction="#MettreAjourDonneesClient" prefHeight="26.0" prefWidth="190.0" style="-fx-background-color: #327794;" text="Modifier information" textFill="WHITE" />
+            <Label fx:id="WarnningLabel" layoutX="72.0" layoutY="71.0" text="Label" textFill="#d42a2a" visible="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="SuccesLabel" layoutX="79.0" layoutY="76.0" text="Label" textFill="#24c960" visible="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="PaneListeProduit1" prefHeight="590.0" prefWidth="222.0" style="-fx-background-color: #327794;">
+         <children>
+            <Label fx:id="WelcomeLabel" layoutX="40.0" layoutY="23.0" prefHeight="18.0" prefWidth="141.0" text="Welcome Back Mr....." textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <Button fx:id="ListProduitButton" disable="true" layoutX="-1.0" layoutY="75.0" mnemonicParsing="false" onAction="#ActivateListeProduitPane" prefHeight="54.0" prefWidth="222.0" style="-fx-background-color: #07425c;" text="Liste des produits" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Button fx:id="ModifProfilActivationButton" layoutX="-1.0" layoutY="130.0" mnemonicParsing="false" onAction="#ActivateModifProfilPane" prefHeight="43.0" prefWidth="222.0" style="-fx-background-color: #07425c;" text="modifier mon profil" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+            <Button layoutY="527.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="43.0" prefWidth="222.0" style="-fx-background-color: #07425c;" text="Se deconnecter" textFill="WHITE" />
+            <Button fx:id="Reclammationbtn" layoutX="-10.0" layoutY="174.0" mnemonicParsing="false" onAction="#ActivateReclamationPane" prefHeight="43.0" prefWidth="232.0" style="-fx-background-color: #07425c;" text="Reclamation" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Button fx:id="ChatbotBtn" layoutY="217.0" mnemonicParsing="false" onAction="#ActivateChatbot" prefHeight="31.0" prefWidth="222.0" style="-fx-background-color: #07425c;" text="ChatBot" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="PaneReclammation" layoutX="222.0" layoutY="1.0" prefHeight="571.0" prefWidth="1070.0" visible="false">
+         <children>
+            <Label layoutX="322.0" layoutY="173.0" text="Objet :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="274.0" layoutY="38.0" prefHeight="18.0" prefWidth="494.0" text="Envoyer une reclamation" textFill="#07425c">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="TypeReclamationField" layoutX="321.0" layoutY="134.0" prefHeight="26.0" prefWidth="398.0" />
+            <TextArea fx:id="messageReclamtion" layoutX="321.0" layoutY="278.0" prefHeight="200.0" prefWidth="398.0" />
+            <TextField fx:id="ObjetReclamation" layoutX="322.0" layoutY="203.0" prefHeight="26.0" prefWidth="398.0" />
+            <Label layoutX="322.0" layoutY="102.0" text="Type du reclamation">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="321.0" layoutY="248.0" prefHeight="18.0" prefWidth="76.0" text="message : ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="SendReclmBtn" layoutX="333.0" layoutY="513.0" mnemonicParsing="false" onAction="#sendReclamation" prefHeight="26.0" prefWidth="114.0" text="Envoyer" />
+            <Button layoutX="605.0" layoutY="513.0" mnemonicParsing="false" onAction="#resetReclamation" prefHeight="26.0" prefWidth="114.0" text="Clear" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ChatBotPanel" layoutX="222.0" prefHeight="590.0" prefWidth="1070.0" visible="false">
+         <children>
+            <TextField fx:id="UserInputChatbot" layoutX="14.0" layoutY="532.0" prefHeight="26.0" prefWidth="534.0" />
+            <Button fx:id="SendBotMessage" layoutX="558.0" layoutY="533.0" mnemonicParsing="false" onAction="#ResponseBot" prefHeight="26.0" prefWidth="130.0" text="Envoyer" />
+            <TextArea fx:id="BotResponse" layoutX="14.0" layoutY="70.0" prefHeight="444.0" prefWidth="668.0" />
+            <Label layoutX="24.0" layoutY="24.0" text="Welcome to Our ChatBot  NB: this only a Beta version our bot is still under Construction">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

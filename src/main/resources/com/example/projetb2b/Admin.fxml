@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="583.0" prefWidth="857.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetb2b.AdminController">
+   <children>
+      <AnchorPane layoutX="-1.0" prefHeight="586.0" prefWidth="192.0" style="-fx-background-color: #327794; -fx-border-color: black; -fx-border-radius: 5px;">
+         <children>
+            <Button fx:id="DashboardBtn" layoutY="93.0" mnemonicParsing="false" onAction="#ActivateDashboardPanel" prefHeight="26.0" prefWidth="190.0" style="-fx-background-color: #07425c;" text="dashboard" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Button fx:id="MenuAjoutProdui" layoutY="125.0" mnemonicParsing="false" onAction="#ActivateAjoutProduitPanel" prefHeight="26.0" prefWidth="190.0" style="-fx-background-color: #07425c;" text="Ajouter Produit" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Button fx:id="LogoutAdminBtn" layoutX="1.0" layoutY="559.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="26.0" prefWidth="187.0" style="-fx-background-color: #07425c;" text="Se deconnecter" textFill="WHITE" />
+            <Label layoutX="9.0" layoutY="22.0" text="bienvenue a l'interface Admin">
+               <font>
+                  <Font size="13.0" />
+               </font></Label>
+            <Button fx:id="MenuListeREclamation" layoutX="1.0" layoutY="156.0" mnemonicParsing="false" onAction="#ActivateReclamationPAnel" prefHeight="26.0" prefWidth="190.0" style="-fx-background-color: #07425c;" text="Liste des Reclamation" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+               <Button fx:id="ChatbotBtn" layoutY="187.0" mnemonicParsing="false" onAction="#ActivateChatbot" prefHeight="31.0" prefWidth="190.0" style="-fx-background-color: #07425c;" text="ChatBot" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="186.0" prefHeight="583.0" prefWidth="671.0">
+         <children>
+            <AnchorPane fx:id="PanelDashboard" layoutX="4.0" layoutY="-5.0" prefHeight="591.0" prefWidth="698.0" style="-fx-background-color: #edeffa;" visible="false">
+               <children>
+                  <AnchorPane layoutX="14.0" layoutY="114.0" opacity="0.8" prefHeight="178.0" prefWidth="200.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
+                     <children>
+                        <Label layoutX="38.0" layoutY="14.0" prefHeight="26.0" prefWidth="122.0" text="Nombre des clients" textFill="#080808">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="nbreClient" alignment="CENTER" contentDisplay="CENTER" layoutX="70.0" layoutY="57.0" style="-fx-text-alignment: center;" text="Label" textAlignment="CENTER" textFill="#080808">
+                           <font>
+                              <Font size="43.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="251.0" layoutY="114.0" opacity="0.8" prefHeight="178.0" prefWidth="200.0" style="-fx-background-color: #ffff; -fx-background-radius: 5px;">
+                     <children>
+                        <Label layoutX="26.0" layoutY="14.0" text="Nombre des Commandes">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="nbrCommande" alignment="CENTER" contentDisplay="CENTER" layoutX="85.0" layoutY="51.0" text="Label">
+                           <font>
+                              <Font size="43.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="475.0" layoutY="221.0" opacity="0.8" prefHeight="186.0" prefWidth="200.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
+                     <children>
+                        <Label layoutX="32.0" layoutY="14.0" text="Nombre de reclamation">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="nbreReclamation" alignment="CENTER" contentDisplay="CENTER" layoutX="31.0" layoutY="61.0" prefHeight="64.0" prefWidth="137.0" text="Label">
+                           <font>
+                              <Font size="43.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="14.0" layoutY="367.0" opacity="0.8" prefHeight="178.0" prefWidth="200.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
+                     <children>
+                        <Label layoutX="39.0" layoutY="14.0" text="Nombre des Produits">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="NbrProduits" alignment="CENTER" contentDisplay="CENTER" layoutX="74.0" layoutY="57.0" text="Label">
+                           <font>
+                              <Font size="43.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="251.0" layoutY="367.0" opacity="0.8" prefHeight="178.0" prefWidth="200.0" style="-fx-background-color: #fff; -fx-background-radius: 5px;">
+                     <children>
+                        <Label layoutX="56.0" layoutY="14.0" text="Chiffre d'affaire">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="nbrChiffreAffaire" alignment="CENTER" contentDisplay="CENTER" layoutX="68.0" layoutY="57.0" text="Label">
+                           <font>
+                              <Font size="43.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="23.0" layoutY="39.0" text="Dashboard" textFill="#545556">
+                     <font>
+                        <Font name="Arial" size="24.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="8.0" layoutY="79.0" opacity="0.76" prefHeight="0.0" prefWidth="691.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="AjoutProduitPanel" prefHeight="583.0" prefWidth="702.0" style="-fx-background-color: white;" visible="false">
+               <children>
+                  <Label layoutX="284.0" layoutY="14.0" prefHeight="36.0" prefWidth="216.0" text="Ajouter un Produit ">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="3.0" layoutY="345.0" prefHeight="230.0" prefWidth="697.0" style="-fx-background-color: white; -fx-border-color: #327794; -fx-border-radius: 10px;">
+                     <children>
+                        <Button fx:id="Resetbtn" layoutX="533.0" layoutY="170.0" mnemonicParsing="false" onAction="#resetFields" onMouseClicked="#resetFields" prefHeight="25.0" prefWidth="88.0" text="Reset" />
+                        <Button fx:id="ajouterProduitbtn" layoutX="533.0" layoutY="80.0" mnemonicParsing="false" onAction="#addProductToDatabase" onMouseClicked="#addProductToDatabase" prefHeight="26.0" prefWidth="88.0" text="Ajouter" />
+                        <TextArea fx:id="descriptionArea" layoutX="270.0" layoutY="83.0" prefHeight="110.0" prefWidth="207.0" promptText="Description Produit" />
+                        <TextField fx:id="libelleField" layoutX="72.0" layoutY="81.0" promptText="Libélle Produit" />
+                        <Label layoutX="76.0" layoutY="56.0" text="Libélle Produit : " />
+                        <Label layoutX="270.0" layoutY="56.0" text="Description Produit : " />
+                        <TextField fx:id="PriceField" layoutX="76.0" layoutY="157.0" prefHeight="25.0" prefWidth="149.0" promptText="Prix" />
+                        <Label layoutX="76.0" layoutY="121.0" text="Prix Produit : " />
+                        <Label layoutX="222.0" layoutY="14.0" text="Ajouter les information du produit">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="533.0" onAction="#UpdateProduct" layoutY="126.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="86.0" text="Modifier" />
+                     </children>
+                  </AnchorPane>
+                  <TableView fx:id="TableProduits" layoutX="14.0" layoutY="50.0" prefHeight="289.0" prefWidth="680.0">
+                    <columns>
+                      <TableColumn prefWidth="176.79998779296875" text="libelle_produit" />
+                      <TableColumn prefWidth="86.4000244140625" text="prix_produit" />
+                        <TableColumn prefWidth="415.1999816894531" text="description_produit" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="ListeReclamationPanel" prefHeight="583.0" prefWidth="702.0" visible="false">
+               <children>
+                  <TableView fx:id="RaclamationTable" layoutX="5.0" layoutY="6.0" prefHeight="572.0" prefWidth="691.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="C1" />
+                      <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="ChatBotPanel" layoutX="4.0" layoutY="4.0" prefHeight="583.0" prefWidth="698.0">
+               <children>
+                  <TextField fx:id="UserInputChatbot" layoutX="14.0" layoutY="532.0" prefHeight="26.0" prefWidth="534.0" />
+                  <Button fx:id="SendBotMessage" layoutX="558.0" layoutY="533.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="130.0" text="Envoyer" />
+                  <TextArea fx:id="BotResponse" layoutX="14.0" layoutY="70.0" prefHeight="444.0" prefWidth="668.0" />
+                  <Label layoutX="24.0" layoutY="24.0" text="Welcome to Our ChatBot  NB: this only a Beta version our bot is still under Construction">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
